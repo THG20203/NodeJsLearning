@@ -55,7 +55,11 @@ will move on to the next line of code. */
 /* 1). need to create server */
 /* 2). need to start the server */
 
-/* for outputting json, we can use synchronous version */
+/* for outputting json, we can use synchronous version - code outside of callback 
+function (so called top level code) only happens once when code starts. top level code
+only executed once. */
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
+const dataObj = JSON.parse(data);
 
 /* using method on http object (http module - just like we did with fs module) */
 /* create server will accept a callback function - will be fired off each time 
@@ -73,7 +77,9 @@ const server = http.createServer((req, res) => {
     } else if (pathName === "/product") {
         res.end("This is the product"); 
     } else if (pathName === "/api") {
-   } else {
+        res.writeHead(200, { "Content-type": "application/json"});
+        res.end(data);
+    } else {
         /* adding in status code 404 */
         res.writeHead(404, {
             /* header we want to send - piece of info about response we are sending back */
