@@ -14,3 +14,18 @@ Node.js process - runs in single thread.
 
 thread = a sequence of instructions. node runs in one thread, makes it easy to block
 a node application.  */
+
+/* Single thread - process
+initialise program,
+execute top level code,
+require modules,
+register event callbacks, 
+start event loop  
+
+event loop = where hard work is done in the app. 
+event loop is heart of architecture - some tasks = too expnasive to do in 
+the event loop. 
+
+thread pool - provided to node.js by livum library. thread pool - 
+gives us 4 additional threads. 
+*/
