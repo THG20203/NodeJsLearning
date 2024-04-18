@@ -55,6 +55,8 @@ will move on to the next line of code. */
 /* 1). need to create server */
 /* 2). need to start the server */
 
+/* for outputting json, we can use synchronous version */
+
 /* using method on http object (http module - just like we did with fs module) */
 /* create server will accept a callback function - will be fired off each time 
 new request hits our server. */
@@ -71,15 +73,6 @@ const server = http.createServer((req, res) => {
     } else if (pathName === "/product") {
         res.end("This is the product"); 
     } else if (pathName === "/api") {
-        /* __dirname = where current file is located */
-        fs.readFile(`${__dirname}/dev-data/data.json`, "utf-8", (err, data) => {
-            /* now have access to data, but data is in json so in JavaScript have JSON.parse() */
-            /* JSON.parse() turn data from string into javascript */
-            const productData = JSON.parse(data);
-            /* need to tell browser we're sending back JSON with application/json */
-            res.writeHead(200, { "Content-type": "application/json"});
-            res.end(data);
-        });
    } else {
         /* adding in status code 404 */
         res.writeHead(404, {
