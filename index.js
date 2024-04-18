@@ -104,4 +104,8 @@ messages from client to server and back. */
 
 // Front End vs Backend
 /* Browser vs server */
-/* Front end is in the web browser */
+/* Front end is in the web browser - final website visible to user. front end
+HTML, CSS, JavaScript. Modern devs add React etc. */
+/* Back end is server - everything invisible to user hence 'backend'. Server = 
+computer connected to internet, stories files, and runs http server. 
+http server = capable of understanding URL's, requests, delivering responses. */
