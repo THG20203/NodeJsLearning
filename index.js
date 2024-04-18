@@ -70,6 +70,11 @@ const server = http.createServer((req, res) => {
         res.end("This is the overview"); 
     } else if (pathName === "/product") {
         res.end("This is the product"); 
+    } else {
+        /* adding in status code */
+        res.writeHead(404);
+        /* for any other cases - page not found */
+        res.end("Page not found");
     }
 });
 
