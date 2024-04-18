@@ -73,3 +73,16 @@ server.listen(8000, "127.0.0.1", () => {
 })
 
 /* http://127.0.0.1:8000/ put this into URL bar of chrome to check it worked. */
+
+///////////////////////////////////////////////////////////////////
+// How web really works
+// CLIENT (Browser) 
+/* protocol = https */ 
+/* domain name = google.com (nice name easy to memorise) */
+/* resource = /maps */
+
+/* Domain name google.com nneds to be converted to real address of the server, 
+through a DNS (Domain Name Server) - special server - phone book of internet. 
+This happens through ISP (internet Service Provider). */
+
+// SERVER
