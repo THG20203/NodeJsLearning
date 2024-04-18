@@ -33,9 +33,11 @@ fs.readFile("./txt/start.txt", "utf-8", (err, data1) => {
         console.log(data2);
         fs.readFile("./txt/append.txt", "utf-8", (err, data3) => {
             console.log(data3);
-            /* in writeFile is no data just an error */
-            fs.writeFile(".txt/final.txt", "utf-8", err => {
-
+            /* second argument = what to write to the file. */
+            /* \n is used as a newline character to add a line break in a string */
+            /* in writeFile is no data to be read, so just an error argument */
+            fs.writeFile(".txt/final.txt", `${data2}\n${data3}`, "utf-8", err => {
+                console.log("Your file has been written");
             })
         });
     });
