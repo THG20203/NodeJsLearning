@@ -1,10 +1,9 @@
-const hello = "Hello World";
-console.log(hello);
-
 /* in Node.js is used to import the File System (fs) module, which is a 
 core Node.js module providing a lot of useful functionality to access 
 and interact with the file system. */
 const fs = require("fs");
+/* another module - for networking capabilities */
+const http = require("http");
 
 
 /* BLOCKING, SYNCHRONOUS WAY */
@@ -27,23 +26,23 @@ console.log(textIn);
 /* reading file */
 /* again, pass in path to file, file encoding = second argument 
 pass in call back function as second argument. */
-fs.readFile("./txt/start.txt", "utf-8", (err, data1) => {
+/* fs.readFile("./txt/start.txt", "utf-8", (err, data1) => {
     if (err) return console.log("ERROR");
 
     /* now going to read the content of read this txt */
-    fs.readFile(`./txt/${data1}.txt`, "utf-8", (err, data2) => {
-        console.log(data2);
-        fs.readFile("./txt/append.txt", "utf-8", (err, data3) => {
-            console.log(data3);
+    // fs.readFile(`./txt/${data1}.txt`, "utf-8", (err, data2) => { 
+       // console.log(data2);
+        // fs.readFile("./txt/append.txt", "utf-8", (err, data3) => {
+            //console.log(data3);
             /* second argument = what to write to the file. */
             /* \n is used as a newline character to add a line break in a string */
             /* in writeFile is no data to be read, so just an error argument */
-            fs.writeFile("./txt/final.txt", `${data2}\n${data3}`, "utf-8", err => {
-                console.log("Your file has been written");
-            });
-        });
-    });
-});
+            //fs.writeFile("./txt/final.txt", `${data2}\n${data3}`, "utf-8", err => {
+               // console.log("Your file has been written");
+           // });
+       // });
+  //  });
+// });
 /* node js start reading file in the background, will not block code,
 will move on to the next line of code. */
-console.log("will read file");
+// console.log("will read file");
