@@ -71,8 +71,15 @@ const server = http.createServer((req, res) => {
     } else if (pathName === "/product") {
         res.end("This is the product"); 
     } else if (pathName === "/api") {
-        /* for now placeholder res.end */
-        res.end("API");
+        /* __dirname = where current file is located */
+        fs.readFile(`${__dirname}/dev-data/data.json`, "utf-8", (err, data) => {
+            /* now have access to data, but data is in json so in JavaScript have JSON.parse() */
+            /* JSON.parse() turn data from string into javascript */
+            const productData = JSON.parse(data);
+            /* need to tell browser we're sending back JSON with application/json */
+            res.writeHead(200, { "Content-type": "application/json"});
+            res.end(data);
+        });
    } else {
         /* adding in status code 404 */
         res.writeHead(404, {
