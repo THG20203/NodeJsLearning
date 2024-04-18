@@ -39,4 +39,17 @@ that talks to databases - we use server capable of running dynamic applications.
 This is called dynamic server. */
 /* When building Dynamic apps, often use database. */
 
+/* We'll use Node.js and MongoDB?? In this course */
+
 // Static vs Dynamic vs Api
+
+/* Static */
+/* Developer uploads ready to use files onto web server - HTML, CSS, JavaScript */
+/* No backend code, no application running */
+/* JavaScript is not dynamic in the sense of being generated on servers. */
+
+/* Dynamic */
+/* rebuilt each time request for the server comes in. Server side rendering. */
+/* Web Application = Dynamic website + Functionality */
+
+/* API's */
