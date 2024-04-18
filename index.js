@@ -58,7 +58,17 @@ will move on to the next line of code. */
 /* create server will accept a callback function - will be fired off each time 
 new request hits our server. */
 /* two important variables request and response */
-http.createServer((req, res) => {
-    /* send back response to client */
+const server = http.createServer((req, res) => {
+    /* send back response to client - end method from res (tools dealing with res) */
     res.end("Hello from the server");
+});
+
+/* listen method accept serveral arguments - port (sub address on host), host specified 
+next - (don't need to, will default to local host, but going to do it anyway) */
+/* first argument - port */
+/* second argument - specifying host */
+/* third argument - callback function for when server starts */
+server.listen(8000, "127.0.0.1", () => {
+    
 })
+
