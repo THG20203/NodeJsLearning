@@ -27,12 +27,15 @@ console.log(textIn);
 /* reading file */
 /* again, pass in path to file, file encoding = second argument 
 pass in call back function as second argument. */
-fs.readFile("./txt/start.txt", "utf-8", (err, data) => {
+fs.readFile("./txt/start.txt", "utf-8", (err, data1) => {
     /* now going to read the content of read this txt */
-    fs.readFile("./txt/${data1}.txt", "utf-8", (err, data2) => {
+    fs.readFile(`./txt/${data1}.txt`, "utf-8", (err, data2) => {
         console.log(data2);
-    })
-})
+        fs.readFile("./txt/append.txt", "utf-8", (err, data3) => {
+            console.log(data3);
+        });
+    });
+});
 /* node js start reading file in the background, will not block code,
 will move on to the next line of code. */
 console.log("will read file");
