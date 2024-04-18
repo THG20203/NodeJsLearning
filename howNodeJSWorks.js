@@ -28,4 +28,13 @@ the event loop.
 
 thread pool - provided to node.js by livum library. thread pool - 
 gives us 4 additional threads. 
+
+thread pool:
+handles heavy expansive tasks 
+- file system Api's
+- Crypotography
+- Compression
+- DNS Lookups
 */
+
+// Node.js Event Loop 
