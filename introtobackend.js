@@ -53,3 +53,6 @@ This is called dynamic server. */
 /* Web Application = Dynamic website + Functionality */
 
 /* API's */
+/* building phase of website moved from backend to the frontend. 
+In backend database, get data, json then into front end where templates are 
+created and the website is built. */
