@@ -16,11 +16,11 @@ thread = a sequence of instructions. node runs in one thread, makes it easy to b
 a node application.  */
 
 /* Single thread - process
-initialise program,
-execute top level code,
-require modules,
-register event callbacks, 
-start event loop  
+- initialise program,
+- execute top level code,
+- require modules,
+- register event callbacks, 
+- start event loop  
 
 event loop = where hard work is done in the app. 
 event loop is heart of architecture - some tasks = too expnasive to do in 
