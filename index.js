@@ -4,6 +4,7 @@ and interact with the file system. */
 const fs = require("fs");
 /* another module - for networking capabilities */
 const http = require("http");
+const url = require("url");
 
 ///////////////////////////////////////////////////////////////////////////////
 // FILES
@@ -59,8 +60,17 @@ will move on to the next line of code. */
 new request hits our server. */
 /* two important variables request and response */
 const server = http.createServer((req, res) => {
-    /* send back response to client - end method from res (tools dealing with res) */
-    res.end("Hello from the server");
+    console.log(req.url); /* /favicon.ico and / -> callback happens twice */
+
+    /* all we need is a big if/else statement */
+    const pathName = req.url;
+
+    if(pathName === "/" || pathName === "/overview") {
+        /* send back response to client - end method from res (tools dealing with res) */
+        res.end("This is the overview"); 
+    } else if (pathName === "/product") {
+        res.end("This is the product"); 
+    }
 });
 
 /* listen method accept serveral arguments - port (sub address on host), host specified 
