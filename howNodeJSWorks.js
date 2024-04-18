@@ -38,3 +38,11 @@ handles heavy expansive tasks
 */
 
 // Node.js Event Loop 
+/* Event Loop - in single thread.
+Event Loop = all application code that is inside callback functions 
+(non top level code). 
+Node.js is built around callback functions. 
+Event-driven architecture:
+- Events are emitted
+- Event loops picks them up 
+- Callbacks are called */
