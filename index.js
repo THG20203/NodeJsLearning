@@ -91,4 +91,17 @@ This happens through ISP (internet Service Provider). */
 /* 216.58.211.206 = IP address */
 /* :403 Port Number  - 443 for HTTPS, 80 for HTTP */
 
-/* The SERVER */
+/* Once we have real address - TCP socket connection is established between
+browser and server which are now finally connected. */
+/* Make HTTP request to server - hyper text transfer protocol */
+/* HTTP request is like a TCP connection - Communication protocol 
+allows clients and web servers to communicate by sending request and response 
+messages from client to server and back. */
+
+/* HTTPS is encrypted */
+
+/* The server */
+
+// Front End vs Backend
+/* Browser vs server */
+/* Front end is in the web browser */
