@@ -76,7 +76,7 @@ server.listen(8000, "127.0.0.1", () => {
 
 ///////////////////////////////////////////////////////////////////
 // How web really works
-// CLIENT (Browser) 
+/* CLIENT (Browser) */ 
 /* protocol = https */ 
 /* domain name = google.com (nice name easy to memorise) */
 /* resource = /maps */
@@ -85,4 +85,10 @@ server.listen(8000, "127.0.0.1", () => {
 through a DNS (Domain Name Server) - special server - phone book of internet. 
 This happens through ISP (internet Service Provider). */
 
-// SERVER
+/* https://216.58.211.206:443 */
+
+/* https = protocol */
+/* 216.58.211.206 = IP address */
+/* :403 Port Number  - 443 for HTTPS, 80 for HTTP */
+
+/* The SERVER */
