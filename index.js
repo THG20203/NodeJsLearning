@@ -71,10 +71,15 @@ const server = http.createServer((req, res) => {
     } else if (pathName === "/product") {
         res.end("This is the product"); 
     } else {
-        /* adding in status code */
-        res.writeHead(404);
-        /* for any other cases - page not found */
-        res.end("Page not found");
+        /* adding in status code 404 */
+        res.writeHead(404, {
+            /* header we want to send - piece of info about response we are sending back */
+            "Content-type": "text/html",
+            /* made up header */
+            "my-own-header": "Hello-world"
+        });
+        /* for any other cases - page not found. Cause got Content type html can now send <h1> */
+        res.end("<h1>Page not found</h1>");
     }
 });
 
