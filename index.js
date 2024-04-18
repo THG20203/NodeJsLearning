@@ -70,7 +70,10 @@ const server = http.createServer((req, res) => {
         res.end("This is the overview"); 
     } else if (pathName === "/product") {
         res.end("This is the product"); 
-    } else {
+    } else if (pathName === "/api") {
+        /* for now placeholder res.end */
+        res.end("API");
+   } else {
         /* adding in status code 404 */
         res.writeHead(404, {
             /* header we want to send - piece of info about response we are sending back */
