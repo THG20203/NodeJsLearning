@@ -69,6 +69,7 @@ next - (don't need to, will default to local host, but going to do it anyway) */
 /* second argument - specifying host */
 /* third argument - callback function for when server starts */
 server.listen(8000, "127.0.0.1", () => {
-    
+    console.log("Listening to requests on Port 8000");
 })
 
+/* http://127.0.0.1:8000/ put this into URL bar of chrome to check it worked. */
