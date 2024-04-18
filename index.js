@@ -5,6 +5,8 @@ const fs = require("fs");
 /* another module - for networking capabilities */
 const http = require("http");
 
+///////////////////////////////////////////////////////////////////////////////
+// FILES
 
 /* BLOCKING, SYNCHRONOUS WAY */
 
@@ -46,3 +48,17 @@ pass in call back function as second argument. */
 /* node js start reading file in the background, will not block code,
 will move on to the next line of code. */
 // console.log("will read file");
+
+/////////////////////////////////////////////////////////////////////////////
+// SERVER
+/* 1). need to create server */
+/* 2). need to start the server */
+
+/* using method on http object (http module - just like we did with fs module) */
+/* create server will accept a callback function - will be fired off each time 
+new request hits our server. */
+/* two important variables request and response */
+http.createServer((req, res) => {
+    /* send back response to client */
+    res.end("Hello from the server");
+})
