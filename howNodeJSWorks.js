@@ -46,3 +46,20 @@ Event-driven architecture:
 - Events are emitted
 - Event loops picks them up 
 - Callbacks are called */
+
+/* Event loop start right away 
+event loop has callback queue - 
+event loop has many phases - each has callback queue. 
+1st phase - expired timer callbacks (such as timeout callbacks)
+
+2nd phase - I/O polling and callbacks - 
+I/O = I/O stands for Input Output
+I/O means stuff like networking and file access.
+
+3rd phase = setImmediate callbacks - 
+For web server / web socket. 
+*/
+
+/* Then - any pending timers or I/O tasks? yes or no, go back through 
+or exit program */
+
