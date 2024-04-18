@@ -28,6 +28,8 @@ console.log(textIn);
 /* again, pass in path to file, file encoding = second argument 
 pass in call back function as second argument. */
 fs.readFile("./txt/start.txt", "utf-8", (err, data1) => {
+    if (err) return console.log("ERROR");
+
     /* now going to read the content of read this txt */
     fs.readFile(`./txt/${data1}.txt`, "utf-8", (err, data2) => {
         console.log(data2);
