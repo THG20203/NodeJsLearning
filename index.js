@@ -67,7 +67,8 @@ const replaceTemplate = (temp, product) => {
     output = output.replace(/{%DESCRIPTION%}/g, product.description);
     output = output.replace(/{%ID%}/g, product.id);
     
-    if(!product.organic) output = output.replace(/{%NOT_ORGANIC%}/g, product.image);
+    /* not-organic is the CSS class */
+    if(!product.organic) output = output.replace(/{%NOT_ORGANIC%}/g, "not-organic");
 }
 
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, "utf-8");
