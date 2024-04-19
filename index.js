@@ -100,7 +100,7 @@ const server = http.createServer((req, res) => {
         const cardsHtml = dataObj.map(el => {
             /* takes in card html or temp card, and takes in current object el */
             /* el is element that holds the data. */
-            replaceTemplate(tempCard, el);
+            return replaceTemplate(tempCard, el);
         })
 
         /* send back response to client - end method from res (tools dealing with res) */
