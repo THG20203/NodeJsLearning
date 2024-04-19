@@ -71,9 +71,16 @@ const server = http.createServer((req, res) => {
     /* all we need is a big if/else statement */
     const pathName = req.url;
 
+
+
+
+
+    //OVERVIEW PAGE 
     if(pathName === "/" || pathName === "/overview") {
         /* send back response to client - end method from res (tools dealing with res) */
         res.end("This is the overview"); 
+
+    // PRODUCT PAGE
     } else if (pathName === "/product") {
         res.end("This is the product"); 
     } else if (pathName === "/api") {
