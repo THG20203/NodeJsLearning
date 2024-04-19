@@ -55,15 +55,21 @@ will move on to the next line of code. */
 /* 1). need to create server */
 /* 2). need to start the server */
 
-/* for outputting json, we can use synchronous version - code outside of callback 
-function (so called top level code) only happens once when code starts. top level code
-only executed once. */
+const replaceTemplate = (temp, product) => {
+    /* /{%VARIABLE_NAME%}/g to make it global - to replace all of them */
+    /* let output, replace product name in temp, so from now on manipulate let output */
+    let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
+    output = output.replace(/{%IMAGE%}/g, product.image);
+}
+
 const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, "utf-8");
 const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, "utf-8");
 const tempProduct = fs.readFileSync(`${__dirname}/templates/template-product.html`, "utf-8");
 
+/* for outputting json, we can use synchronous version - code outside of callback 
+function (so called top level code) only happens once when code starts. top level code
+only executed once. */
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
-
 const dataObj = JSON.parse(data);
 
 /* using method on http object (http module - just like we did with fs module) */
@@ -75,10 +81,6 @@ const server = http.createServer((req, res) => {
 
     /* all we need is a big if/else statement */
     const pathName = req.url;
-
-
-
-
 
     //OVERVIEW PAGE 
     if(pathName === "/" || pathName === "/overview") {
