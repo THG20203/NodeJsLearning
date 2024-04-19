@@ -89,6 +89,8 @@ new request hits our server. */
 /* two important variables request and response */
 const server = http.createServer((req, res) => {
     console.log(req.url); /* /favicon.ico and / -> callback happens twice */
+    
+    /* desctructuring to create query and pathName variables */
     const { query, pathName } = url.parse(req.url, true);
 
     //OVERVIEW PAGE 
@@ -110,7 +112,10 @@ const server = http.createServer((req, res) => {
 
     // PRODUCT PAGE
     } else if (pathName === "/product") {
-        res.end("This is the product"); 
+        res.writeHead(200, { "Content-type": "text/html"});
+        const product = dataObj[query.id];
+        const output = replaceTemplate(tempProduct, product);
+        res.end(output); 
 
     // API
     } else if (pathName === "/api") {
