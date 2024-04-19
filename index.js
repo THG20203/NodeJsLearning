@@ -89,9 +89,7 @@ new request hits our server. */
 /* two important variables request and response */
 const server = http.createServer((req, res) => {
     console.log(req.url); /* /favicon.ico and / -> callback happens twice */
-
-    /* all we need is a big if/else statement */
-    const pathName = req.url;
+    const { query, pathName } = url.parse(req.url, true);
 
     //OVERVIEW PAGE 
     if(pathName === "/" || pathName === "/overview") {
