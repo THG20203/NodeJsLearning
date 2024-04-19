@@ -58,7 +58,12 @@ will move on to the next line of code. */
 /* for outputting json, we can use synchronous version - code outside of callback 
 function (so called top level code) only happens once when code starts. top level code
 only executed once. */
+const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, "utf-8");
+const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, "utf-8");
+const tempProduct = fs.readFileSync(`${__dirname}/templates/template-product.html`, "utf-8");
+
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
+
 const dataObj = JSON.parse(data);
 
 /* using method on http object (http module - just like we did with fs module) */
@@ -77,15 +82,21 @@ const server = http.createServer((req, res) => {
 
     //OVERVIEW PAGE 
     if(pathName === "/" || pathName === "/overview") {
+        // FIRST THING TO DO IS READ TEMPLATE OVERVIEW - BUT THIS WE CAN DO OUTSIDE OF CALLBACK
+
         /* send back response to client - end method from res (tools dealing with res) */
         res.end("This is the overview"); 
 
     // PRODUCT PAGE
     } else if (pathName === "/product") {
         res.end("This is the product"); 
+
+    // API
     } else if (pathName === "/api") {
         res.writeHead(200, { "Content-type": "application/json"});
         res.end(data);
+
+    // NOT FOUND
     } else {
         /* adding in status code 404 */
         res.writeHead(404, {
