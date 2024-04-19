@@ -82,10 +82,18 @@ const server = http.createServer((req, res) => {
 
     //OVERVIEW PAGE 
     if(pathName === "/" || pathName === "/overview") {
-        // FIRST THING TO DO IS READ TEMPLATE OVERVIEW - BUT THIS WE CAN DO OUTSIDE OF CALLBACK
+        res.writeHead(200, { "Content-type": "text/html"});
+
+        /* map accepts a callback function, this callback function gets an argument (the 
+        current element) - then whatever we return in the loop will get saved into an array. */
+        const cardsHtml = dataObj.map(el => {
+            /* takes in card html or temp card, and takes in current object el */
+            /* el is element that holds the data. */
+            replaceTemplate(tempCard, el);
+        })
 
         /* send back response to client - end method from res (tools dealing with res) */
-        res.end("This is the overview"); 
+        res.end(tempOverview); 
 
     // PRODUCT PAGE
     } else if (pathName === "/product") {
